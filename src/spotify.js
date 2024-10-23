@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const authEndpoint = "https://accounts.spotify.com/authorize?";
-const clientId = "1cbecb9386614bc4b5902d805440f779";
+const clientId = "76887be5b88b404d83f94de196a89609";
 const redirectUri = "https://vibinn.vercel.app/";
 const scopes = ["user-library-read", "playlist-read-private"];
 
