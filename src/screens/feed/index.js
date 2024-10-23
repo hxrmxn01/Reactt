@@ -14,6 +14,9 @@ const MusicFeed = () => {
         const fetchedAlbums = response.data.albums.items.map((album) => ({
           title: album.name,
           cover: album.images[0]?.url,
+          artist: album.artists[0].name, // Fetch artist name
+          releaseDate: album.release_date, // Fetch release date
+          totalTracks: album.total_tracks, // Fetch total number of tracks
           size: 'medium-card', // Changed class name to match CSS
         }));
         setAlbums(fetchedAlbums);
@@ -42,7 +45,11 @@ const MusicFeed = () => {
         {albums.map((album, index) => (
           <div key={index} className={`album-card ${album.size}`}>
             <img src={album.cover} alt={album.title} />
-            <h3 class="detaill">{album.title}</h3>
+            <h3 className="detaill">{album.title}</h3>
+            {/* Album Details */}
+            <p className="album-artist">Artist: {album.artist}</p>
+            <p className="album-release-date">Release Date: {album.releaseDate}</p>
+            <p className="album-total-tracks">Tracks: {album.totalTracks}</p>
           </div>
         ))}
       </div>
